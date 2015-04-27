@@ -29,6 +29,10 @@ RUN gem install bundler --no-rdoc --no-ri
 
 RUN service sshd start
 
+## iptables
+RUN echo 'IPTABLES_MODULES_UNLOAD=no' >> /etc/sysconfig/iptables-config
+RUN touch /etc/sysconfig/iptables
+
 EXPOSE 22
 
 CMD /sbin/init
