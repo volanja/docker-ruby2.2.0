@@ -7,7 +7,7 @@ ENV RUBY_VERSION 2.2.0
 ### Packages
 RUN rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 RUN yum update -y
-RUN yum install -y passwd openssh openssh-server openssh-clients initscripts
+RUN yum install -y passwd openssh openssh-server openssh-clients initscripts sudo
 
 ### SSHD
 RUN sed -ri 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
