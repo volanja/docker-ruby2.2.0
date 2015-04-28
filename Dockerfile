@@ -11,8 +11,8 @@ RUN yum install -y passwd openssh openssh-server openssh-clients initscripts sud
 
 ### SSHD
 RUN sed -ri 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config
+RUN sed -ri 's/^PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+RUN sed -ri 's/^#UsePAM yes/UsePAM yes/g' /etc/ssh/sshd_config
 
 ## Ruby
 RUN yum groupinstall -y "Development tools"
