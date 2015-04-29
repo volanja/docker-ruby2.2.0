@@ -29,7 +29,7 @@ RUN service sshd start
 
 ## iptables
 RUN echo 'IPTABLES_MODULES_UNLOAD=no' >> /etc/sysconfig/iptables-config
-RUN touch /etc/sysconfig/iptables
+COPY src/iptables /etc/sysconfig/iptables
 
 EXPOSE 22
 
