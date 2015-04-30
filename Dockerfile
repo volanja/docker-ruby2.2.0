@@ -32,5 +32,6 @@ RUN echo 'IPTABLES_MODULES_UNLOAD=no' >> /etc/sysconfig/iptables-config
 COPY src/iptables /etc/sysconfig/iptables
 
 EXPOSE 22
+EXPOSE 80
 
 CMD /sbin/init
